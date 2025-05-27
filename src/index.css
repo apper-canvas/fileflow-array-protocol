@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'react-toastify/dist/ReactToastify.css';
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+  
+  @media (max-width: 640px) {
+    .file-grid {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.75rem;
+    }
+  }
+  
+  .drag-over {
+    @apply border-primary-500 bg-primary-50 dark:bg-primary-900/20;
+  }
+  
+  .file-upload-zone {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+    border: 2px dashed #cbd5e1;
+    transition: all 0.3s ease;
+  }
+  
+  .file-upload-zone:hover {
+    border-color: #2563eb;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(245, 158, 11, 0.1) 100%);
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface-100 dark:bg-surface-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-surface-300 dark:bg-surface-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface-400 dark:bg-surface-500;
+}
+
+/* Dark mode specific styles */
+.dark .Toastify__toast-container {
+  --toastify-color-light: #1e293b;
+  --toastify-color-dark: #0f172a;
+  --toastify-color-info: #3b82f6;
+  --toastify-color-success: #10b981;
+  --toastify-color-warning: #f59e0b;
+  --toastify-color-error: #ef4444;
+  --toastify-text-color-light: #f1f5f9;
+}
+
+/* File type specific styling */
+.file-icon-folder {
+  @apply text-accent;
+}
+
+.file-icon-image {
+  @apply text-green-500;
+}
+
+.file-icon-document {
+  @apply text-blue-500;
+}
+
+.file-icon-video {
+  @apply text-purple-500;
+}
+
+.file-icon-audio {
+  @apply text-pink-500;
+}
+
+.file-icon-archive {
+  @apply text-orange-500;
+}
+
+.file-icon-default {
+  @apply text-surface-400;
+}
