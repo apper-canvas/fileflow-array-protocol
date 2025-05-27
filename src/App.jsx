@@ -4,6 +4,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import Home from './pages/Home'
 import TermsAndConditions from './pages/TermsAndConditions'
 import GDPRCompliance from './pages/GDPRCompliance'
+import Careers from './pages/Careers'
+
 
 
 import NotFound from './pages/NotFound'
@@ -16,6 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/gdpr" element={<GDPRCompliance />} />
+          <Route path="/careers" element={<Careers />} />
+
 
 
           <Route path="*" element={<NotFound />} />
