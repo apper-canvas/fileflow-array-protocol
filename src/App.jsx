@@ -5,28 +5,22 @@ import Home from './pages/Home'
 import TermsAndConditions from './pages/TermsAndConditions'
 import GDPRCompliance from './pages/GDPRCompliance'
 import Careers from './pages/Careers'
-
-
-
 import NotFound from './pages/NotFound'
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-surface-50 to-surface-100 dark:from-surface-900 dark:to-surface-800">
+      <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/gdpr" element={<GDPRCompliance />} />
           <Route path="/careers" element={<Careers />} />
-
-
-
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ToastContainer
           position="top-right"
-          autoClose={3000}
+          autoClose={5000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
@@ -35,7 +29,6 @@ function App() {
           draggable
           pauseOnHover
           theme="light"
-          className="mt-16"
         />
       </div>
     </Router>
