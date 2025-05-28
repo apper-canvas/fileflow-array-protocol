@@ -10,7 +10,7 @@ import NotFound from './pages/NotFound'
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/terms" element={<TermsAndConditions />} />
@@ -20,7 +20,7 @@ function App() {
         </Routes>
         <ToastContainer
           position="top-right"
-          autoClose={5000}
+          autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
